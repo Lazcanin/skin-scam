@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Skin Scam</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="css/app.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Wrapper del teléfono para visualización desktop -->
+<div class="phone-frame">
+
+    <!-- ============================================ -->
+    <!-- PANTALLA: ONBOARDING                         -->
+    <!-- ============================================ -->
+    <div class="screen active" id="screen-onboarding">
+        <div class="onboarding">
+            <div class="onboarding-content">
+                <div class="onboarding-icon">
+                    <i class="bi bi-search"></i>
+                    <div class="icon-bottle"></div>
+                </div>
+                <h1 class="onboarding-title">
+                    <span class="text-dark">Skin</span> <span class="text-rose">Scam</span>
+                </h1>
+                <p class="onboarding-tagline">Descubre qué hay realmente en tu skincare</p>
+                <div class="onboarding-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+            <button class="btn-primary-pill" onclick="navigateTo('screen-home')">
+                Comenzar
+            </button>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- PANTALLA: HOME                               -->
+    <!-- ============================================ -->
+    <div class="screen" id="screen-home">
+        <div class="screen-scroll">
+            <!-- Header -->
+            <div class="home-header">
+                <div>
+                    <h2 class="greeting">Buenos días, Sofía</h2>
+                    <p class="greeting-sub">Tu piel hoy: Hidratada ✨</p>
+                </div>
+                <div class="avatar" onclick="navigateTo('screen-profile')">S</div>
+            </div>
+
+            <!-- Skin Profile Card -->
+            <div class="skin-profile-card">
+                <div class="skin-profile-header">
+                    <h3>Perfil de Piel</h3>
+                    <span class="link-rose">Editar</span>
+                </div>
+                <div class="skin-profile-info">
+                    <div class="skin-row">
+                        <span class="skin-label">Tipo:</span>
+                        <span class="skin-value">Grasa / Acné</span>
+                    </div>
+                    <div class="skin-row">
+                        <span class="skin-label">Sensibilidad:</span>
+                        <span class="skin-value">Media</span>
+                    </div>
+                    <div class="skin-row">
+                        <span class="skin-label">Preocupaciones:</span>
+                        <div class="skin-tags">
+                            <span class="tag">Manchas</span>
+                            <span class="tag">Poros</span>
+                            <span class="tag">Textura</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Scan -->
+            <div class="section">
+                <h3 class="section-title">Escaneo Rápido</h3>
+                <button class="scan-cta" onclick="navigateTo('screen-scanner')">
+                    <i class="bi bi-camera"></i>
+                    <span>Escanear Producto</span>
+                </button>
+            </div>
+
+            <!-- Routine Today -->
+            <div class="section">
+                <div class="section-header">
+                    <h3 class="section-title">Tu Rutina Hoy</h3>
+                    <span class="link-rose" onclick="navigateTo('screen-routine')">Ver todo</span>
+                </div>
+                <div class="routine-preview">
+                    <div class="routine-step done">
+                        <div class="step-circle" style="background:#E8D5D0;">
+                            <i class="bi bi-check" style="color:#059669;"></i>
+                        </div>
+                        <span class="step-label">Paso 1 ✓</span>
+                    </div>
+                    <div class="routine-step done">
+                        <div class="step-circle" style="background:#D4E8E0;">
+                            <i class="bi bi-check" style="color:#059669;"></i>
+                        </div>
+                        <span class="step-label">Paso 2 ✓</span>
+                    </div>
+                    <div class="routine-step current">
+                        <div class="step-circle" style="background:#F5C6C6;">
+                            <span>3</span>
+                        </div>
+                        <span class="step-label">Siguiente</span>
+                    </div>
+                    <div class="routine-step">
+                        <div class="step-circle" style="background:#E5E7EB;">
+                            <span>4</span>
+                        </div>
+                        <span class="step-label">Paso 4</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trending -->
+            <div class="section">
+                <h3 class="section-title">Trending en Tu Tipo de Piel</h3>
+                <div class="trending-card" onclick="navigateTo('screen-scanner')">
+                    <div class="trending-img">
+                        <div class="product-placeholder serum"></div>
+                    </div>
+                    <div class="trending-info">
+                        <span class="match-badge match-green small">92% Match</span>
+                        <h4>The Ordinary Niacinamide 10%</h4>
+                        <div class="stars">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-half"></i>
+                            <span class="star-text">4.8</span>
+                        </div>
+                        <p class="trending-desc">Sérum para controlar grasa y reducir poros</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="scroll-spacer"></div>
+        </div>
+
+        <!-- Bottom Nav -->
+        <nav class="bottom-nav">
+            <button class="nav-item active" onclick="navigateTo('screen-home')">
+                <i class="bi bi-house-fill"></i>
+                <span>Inicio</span>
+            </button>
+            <button class="nav-item" onclick="navigateTo('screen-scanner')">
+                <i class="bi bi-upc-scan"></i>
+                <span>Scan</span>
+            </button>
+            <button class="nav-scan-btn" onclick="navigateTo('screen-scanner')">
+                <i class="bi bi-camera-fill"></i>
+            </button>
+            <button class="nav-item" onclick="navigateTo('screen-community')">
+                <i class="bi bi-people-fill"></i>
+                <span>Comunidad</span>
+            </button>
+            <button class="nav-item" onclick="navigateTo('screen-profile')">
+                <i class="bi bi-person"></i>
+                <span>Perfil</span>
+            </button>
+        </nav>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- PANTALLA: SCANNER                            -->
+    <!-- ============================================ -->
+    <div class="screen" id="screen-scanner">
+        <div class="scanner">
+            <!-- Camera simulation -->
+            <div class="scanner-camera">
+                <div class="scanner-top-bar">
+                    <button class="btn-back" onclick="navigateTo('screen-home')">
+                        <i class="bi bi-arrow-left"></i>
+                    </button>
+                    <span class="scanner-title">Escanear Producto</span>
+                    <div style="width:40px;"></div>
+                </div>
+                <div class="viewfinder">
+                    <div class="vf-corner tl"></div>
+                    <div class="vf-corner tr"></div>
+                    <div class="vf-corner bl"></div>
+                    <div class="vf-corner br"></div>
+                    <div class="vf-product">
+                        <div class="product-placeholder cream large"></div>
+                    </div>
+                    <div class="scanning-line"></div>
+                </div>
+            </div>
+
+            <!-- Results bottom sheet -->
+            <div class="scanner-sheet">
+                <div class="sheet-handle"></div>
+                <h3 class="sheet-product-name">CeraVe Moisturizing Cream</h3>
+                <p class="sheet-product-type">Crema Hidratante • 340g</p>
+
+                <div class="ingredients-list">
+                    <div class="ingredient-row">
+                        <span class="traffic-light green"></span>
+                        <div class="ingredient-info">
+                            <span class="ingredient-name">Hyaluronic Acid</span>
+                            <span class="ingredient-tag tag-green">Hidratante ✓</span>
+                        </div>
+                    </div>
+                    <div class="ingredient-row">
+                        <span class="traffic-light green"></span>
+                        <div class="ingredient-info">
+                            <span class="ingredient-name">Ceramides</span>
+                            <span class="ingredient-tag tag-green">Barrera ✓</span>
+                        </div>
+                    </div>
+                    <div class="ingredient-row">
+                        <span class="traffic-light amber"></span>
+                        <div class="ingredient-info">
+                            <span class="ingredient-name">Niacinamide</span>
+                            <span class="ingredient-tag tag-amber">Monitorear</span>
+                        </div>
+                    </div>
+                    <div class="ingredient-row">
+                        <span class="traffic-light red"></span>
+                        <div class="ingredient-info">
+                            <span class="ingredient-name">Fragrance / Parfum</span>
+                            <span class="ingredient-tag tag-red">Irritante ⚠</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="match-result">
+                    <div class="match-score">
+                        <span class="match-number">78%</span>
+                        <span class="match-label">Match</span>
+                    </div>
+                    <div class="match-verdict">
+                        <i class="bi bi-shield-check"></i>
+                        <span>Apto para tu tipo de piel</span>
+                    </div>
+                </div>
+
+                <button class="btn-primary-pill" onclick="navigateTo('screen-home')" style="margin-top:16px;">
+                    Ver Análisis Completo
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- PANTALLA: COMMUNITY                          -->
+    <!-- ============================================ -->
+    <div class="screen" id="screen-community">
+        <div class="screen-scroll">
+            <div class="community-header">
+                <h1 class="page-title">Skin Twins</h1>
+                <p class="page-subtitle">Reseñas de personas con tu mismo tipo de piel</p>
+            </div>
+
+            <!-- Filter chips -->
+            <div class="filter-chips">
+                <button class="chip active">Todas</button>
+                <button class="chip">Grasa</button>
+                <button class="chip">Seca</button>
+                <button class="chip">Mixta</button>
+                <button class="chip">Sensible</button>
+            </div>
+
+            <!-- Review Cards -->
+            <div class="reviews-feed">
+                <!-- Review 1 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer">
+                            <div class="avatar small" style="background:#E8D5D0;">A</div>
+                            <div class="reviewer-info">
+                                <span class="reviewer-name">Anya Durán</span>
+                                <span class="reviewer-skin">Grasa, Acné</span>
+                            </div>
+                        </div>
+                        <div class="match-badge match-green">
+                            <span class="match-pct">94%</span>
+                            <span class="match-lbl">Match</span>
+                        </div>
+                    </div>
+                    <div class="stars small-stars">
+                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-half"></i>
+                    </div>
+                    <h4 class="review-product">The Ordinary Niacinamide 10%</h4>
+                    <p class="review-text">Increíble para controlar el brillo. Lo uso hace 3 meses y mis poros se ven mucho más pequeños. Textura ligera, se absorbe rápido.</p>
+                    <div class="review-actions">
+                        <button class="review-btn"><i class="bi bi-heart"></i> 42</button>
+                        <button class="review-btn"><i class="bi bi-chat"></i> 8</button>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer">
+                            <div class="avatar small" style="background:#D4E8E0;">R</div>
+                            <div class="reviewer-info">
+                                <span class="reviewer-name">Rima Jiménez</span>
+                                <span class="reviewer-skin">Grasa, Acné</span>
+                            </div>
+                        </div>
+                        <div class="match-badge match-amber">
+                            <span class="match-pct">67%</span>
+                            <span class="match-lbl">Match</span>
+                        </div>
+                    </div>
+                    <div class="stars small-stars">
+                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star"></i>
+                    </div>
+                    <h4 class="review-product">CeraVe Foaming Cleanser</h4>
+                    <p class="review-text">Buen limpiador para el día a día, pero siento que no remueve bien el maquillaje pesado. Para uso matutino es perfecto.</p>
+                    <div class="review-actions">
+                        <button class="review-btn"><i class="bi bi-heart"></i> 28</button>
+                        <button class="review-btn"><i class="bi bi-chat"></i> 5</button>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer">
+                            <div class="avatar small" style="background:#F5C6C6;">K</div>
+                            <div class="reviewer-info">
+                                <span class="reviewer-name">Khya Delgado</span>
+                                <span class="reviewer-skin">Mixta, Sensible</span>
+                            </div>
+                        </div>
+                        <div class="match-badge match-amber">
+                            <span class="match-pct">52%</span>
+                            <span class="match-lbl">Match</span>
+                        </div>
+                    </div>
+                    <div class="stars small-stars">
+                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+                        <i class="bi bi-star"></i>
+                    </div>
+                    <h4 class="review-product">La Roche-Posay Effaclar Duo</h4>
+                    <p class="review-text">Me ayudó con los brotes pero resecó un poco las zonas secas de mis mejillas. Recomiendo solo en la zona T si tienes piel mixta.</p>
+                    <div class="review-actions">
+                        <button class="review-btn"><i class="bi bi-heart-fill" style="color:#E8909A;"></i> 15</button>
+                        <button class="review-btn"><i class="bi bi-chat"></i> 3</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="scroll-spacer"></div>
+        </div>
+
+        <!-- Bottom Nav -->
+        <nav class="bottom-nav">
+            <button class="nav-item" onclick="navigateTo('screen-home')">
+                <i class="bi bi-house"></i>
+                <span>Inicio</span>
+            </button>
+            <button class="nav-item" onclick="navigateTo('screen-scanner')">
+                <i class="bi bi-upc-scan"></i>
+                <span>Scan</span>
+            </button>
+            <button class="nav-scan-btn" onclick="navigateTo('screen-scanner')">
+                <i class="bi bi-camera-fill"></i>
+            </button>
+            <button class="nav-item active" onclick="navigateTo('screen-community')">
+                <i class="bi bi-people-fill"></i>
+                <span>Comunidad</span>
+            </button>
+            <button class="nav-item" onclick="navigateTo('screen-profile')">
+                <i class="bi bi-person"></i>
+                <span>Perfil</span>
+            </button>
+        </nav>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- PANTALLA: ROUTINE                            -->
+    <!-- ============================================ -->
+    <div class="screen" id="screen-routine">
+        <div class="screen-scroll">
+            <h1 class="page-title" style="padding:24px 24px 0;">Mi Rutina</h1>
+
+            <!-- AM/PM Toggle -->
+            <div class="routine-toggle">
+                <button class="toggle-tab active" data-tab="am">AM ☀️</button>
+                <button class="toggle-tab" data-tab="pm">PM 🌙</button>
+            </div>
+            <p class="routine-subtitle">Rutina Matutina • 4 pasos</p>
+
+            <!-- Steps -->
+            <div class="routine-steps">
+                <!-- Step 1 -->
+                <div class="step-card">
+                    <div class="drag-handle"><i class="bi bi-grip-vertical"></i></div>
+                    <div class="step-number">1</div>
+                    <div class="step-product-img">
+                        <div class="product-placeholder cleanser mini"></div>
+                    </div>
+                    <div class="step-details">
+                        <span class="step-name">Limpiador Suave</span>
+                        <span class="step-brand">CeraVe</span>
+                    </div>
+                    <span class="compat-badge compat-green">Compatible ✓</span>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="step-card">
+                    <div class="drag-handle"><i class="bi bi-grip-vertical"></i></div>
+                    <div class="step-number">2</div>
+                    <div class="step-product-img">
+                        <div class="product-placeholder serum mini"></div>
+                    </div>
+                    <div class="step-details">
+                        <span class="step-name">Sérum Vitamina C</span>
+                        <span class="step-brand">Skinceuticals</span>
+                    </div>
+                    <span class="compat-badge compat-green">Compatible ✓</span>
+                </div>
+
+                <!-- Compatibility Warning -->
+                <div class="compat-warning">
+                    <div class="warning-line"></div>
+                    <span class="warning-text">
+                        <i class="bi bi-exclamation-triangle"></i>
+                        Espera 1 min entre Vitamina C y Humectante
+                    </span>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="step-card">
+                    <div class="drag-handle"><i class="bi bi-grip-vertical"></i></div>
+                    <div class="step-number">3</div>
+                    <div class="step-product-img">
+                        <div class="product-placeholder cream mini"></div>
+                    </div>
+                    <div class="step-details">
+                        <span class="step-name">Humectante</span>
+                        <span class="step-brand">La Roche-Posay</span>
+                    </div>
+                    <span class="compat-badge compat-green">Compatible ✓</span>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="step-card">
+                    <div class="drag-handle"><i class="bi bi-grip-vertical"></i></div>
+                    <div class="step-number">4</div>
+                    <div class="step-product-img">
+                        <div class="product-placeholder sunscreen mini"></div>
+                    </div>
+                    <div class="step-details">
+                        <span class="step-name">Protector Solar SPF 50</span>
+                        <span class="step-brand">Neutrogena</span>
+                    </div>
+                    <span class="compat-badge compat-amber">Capa con cuidado</span>
+                </div>
+
+                <!-- Add Step -->
+                <button class="add-step-btn">
+                    <i class="bi bi-plus-circle"></i>
+                    <span>Agregar Paso</span>
+                </button>
+            </div>
+
+            <div class="scroll-spacer"></div>
+        </div>
+
+        <!-- Bottom Nav -->
+        <nav class="bottom-nav">
+            <button class="nav-item" onclick="navigateTo('screen-home')">
+                <i class="bi bi-house"></i>
+                <span>Inicio</span>
+            </button>
+            <button class="nav-item" onclick="navigateTo('screen-scanner')">
+                <i class="bi bi-upc-scan"></i>
+                <span>Scan</span>
+            </button>
+            <button class="nav-scan-btn" onclick="navigateTo('screen-scanner')">
+                <i class="bi bi-camera-fill"></i>
+            </button>
+            <button class="nav-item" onclick="navigateTo('screen-community')">
+                <i class="bi bi-people"></i>
+                <span>Comunidad</span>
+            </button>
+            <button class="nav-item" onclick="navigateTo('screen-profile')">
+                <i class="bi bi-person"></i>
+                <span>Perfil</span>
+            </button>
+        </nav>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- PANTALLA: PROFILE                            -->
+    <!-- ============================================ -->
+    <div class="screen" id="screen-profile">
+        <div class="screen-scroll">
+            <div class="profile-header">
+                <div class="profile-avatar">S</div>
+                <h2 class="profile-name">Sofía Mendoza</h2>
+                <p class="profile-email">sofia@email.com</p>
+            </div>
+
+            <div class="profile-skin-card">
+                <h3>Mi Tipo de Piel</h3>
+                <div class="profile-skin-grid">
+                    <div class="profile-skin-item">
+                        <span class="psi-label">Tipo</span>
+                        <span class="psi-value">Grasa</span>
+                    </div>
+                    <div class="profile-skin-item">
+                        <span class="psi-label">Sensibilidad</span>
+                        <span class="psi-value">Media</span>
+                    </div>
+                    <div class="profile-skin-item">
+                        <span class="psi-label">Tono</span>
+                        <span class="psi-value">Medio</span>
+                    </div>
+                    <div class="profile-skin-item">
+                        <span class="psi-label">Edad</span>
+                        <span class="psi-value">25</span>
+                    </div>
+                </div>
+                <div class="profile-concerns">
+                    <span class="tag">Manchas</span>
+                    <span class="tag">Poros</span>
+                    <span class="tag">Textura</span>
+                    <span class="tag">Brillo</span>
+                </div>
+            </div>
+
+            <div class="profile-stats">
+                <div class="stat">
+                    <span class="stat-num">12</span>
+                    <span class="stat-lbl">Productos<br>Escaneados</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-num">8</span>
+                    <span class="stat-lbl">Reseñas<br>Escritas</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-num">34</span>
+                    <span class="stat-lbl">Skin<br>Twins</span>
+                </div>
+            </div>
+
+            <div class="profile-menu">
+                <button class="menu-item" onclick="navigateTo('screen-routine')">
+                    <i class="bi bi-calendar-check"></i>
+                    <span>Mi Rutina</span>
+                    <i class="bi bi-chevron-right"></i>
+                </button>
+                <button class="menu-item">
+                    <i class="bi bi-heart"></i>
+                    <span>Productos Favoritos</span>
+                    <i class="bi bi-chevron-right"></i>
+                </button>
+                <button class="menu-item">
+                    <i class="bi bi-bell"></i>
+                    <span>Notificaciones</span>
+                    <i class="bi bi-chevron-right"></i>
+                </button>
+                <button class="menu-item">
+                    <i class="bi bi-shield-lock"></i>
+                    <span>Privacidad</span>
+                    <i class="bi bi-chevron-right"></i>
+                </button>
+                <button class="menu-item" onclick="navigateTo('screen-onboarding')">
+                    <i class="bi bi-box-arrow-left"></i>
+                    <span>Cerrar Sesión</span>
+                    <i class="bi bi-chevron-right"></i>
+                </button>
+            </div>
+
+            <div class="scroll-spacer"></div>
+        </div>
+
+        <!-- Bottom Nav -->
+        <nav class="bottom-nav">
+            <button class="nav-item" onclick="navigateTo('screen-home')">
+                <i class="bi bi-house"></i>
+                <span>Inicio</span>
+            </button>
+            <button class="nav-item" onclick="navigateTo('screen-scanner')">
+                <i class="bi bi-upc-scan"></i>
+                <span>Scan</span>
+            </button>
+            <button class="nav-scan-btn" onclick="navigateTo('screen-scanner')">
+                <i class="bi bi-camera-fill"></i>
+            </button>
+            <button class="nav-item" onclick="navigateTo('screen-community')">
+                <i class="bi bi-people"></i>
+                <span>Comunidad</span>
+            </button>
+            <button class="nav-item active" onclick="navigateTo('screen-profile')">
+                <i class="bi bi-person-fill"></i>
+                <span>Perfil</span>
+            </button>
+        </nav>
+    </div>
+
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
