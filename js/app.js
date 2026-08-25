@@ -101,3 +101,63 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// ── Quiz: selección de opción ──
+function selectQuizOption(el) {
+    document.querySelectorAll('.quiz-option').forEach(function(o) {
+        o.classList.remove('selected');
+    });
+    el.classList.add('selected');
+}
+
+// ── Product Detail: tabs ──
+function switchDetailTab(tabBtn, contentId) {
+    document.querySelectorAll('.detail-tab').forEach(function(t) {
+        t.classList.remove('active');
+    });
+    document.querySelectorAll('.detail-tab-content').forEach(function(c) {
+        c.classList.remove('active');
+    });
+    tabBtn.classList.add('active');
+    var content = document.getElementById(contentId);
+    if (content) content.classList.add('active');
+}
+
+// ── Notifications: tabs ──
+function switchNotifTab(tabBtn) {
+    document.querySelectorAll('.notif-tab').forEach(function(t) {
+        t.classList.remove('active');
+    });
+    tabBtn.classList.add('active');
+}
+
+// ── Write Review: star rating ──
+function setStars(n) {
+    document.querySelectorAll('.wr-star').forEach(function(star, i) {
+        if (i < n) {
+            star.classList.add('active');
+            star.querySelector('i').classList.remove('bi-star');
+            star.querySelector('i').classList.add('bi-star-fill');
+        } else {
+            star.classList.remove('active');
+            star.querySelector('i').classList.remove('bi-star-fill');
+            star.querySelector('i').classList.add('bi-star');
+        }
+    });
+}
+
+// ── Write Review: time option (single select) ──
+function selectTimeOption(el) {
+    el.closest('.wr-time-options').querySelectorAll('.chip').forEach(function(c) {
+        c.classList.remove('active');
+    });
+    el.classList.add('active');
+}
+
+// ── Write Review: repurchase (single select) ──
+function selectRepurchase(el) {
+    document.querySelectorAll('.repurchase-btn').forEach(function(b) {
+        b.classList.remove('active');
+    });
+    el.classList.add('active');
+}
