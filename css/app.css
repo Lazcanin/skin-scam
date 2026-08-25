@@ -104,6 +104,21 @@ body {
   box-shadow: 0 20px 60px rgba(0,0,0,0.15), 0 0 0 8px #1a1a1a;
 }
 
+/* Mobile: fullscreen, no phone frame */
+@media (max-width: 430px) {
+  body {
+    background: var(--warm-white);
+    align-items: stretch;
+  }
+  .phone-frame {
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
+
 
 /* ========================================
    SCREENS
@@ -1210,8 +1225,10 @@ body {
   padding: 8px 16px 28px;
   background: white;
   border-top: 1px solid var(--gray-200);
-  position: relative;
+  position: sticky;
+  bottom: 0;
   flex-shrink: 0;
+  z-index: 100;
 }
 
 .nav-item {
