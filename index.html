@@ -46,45 +46,66 @@
     <!-- PANTALLA: LOGIN                               -->
     <!-- ============================================ -->
     <div class="screen" id="screen-login">
-        <div class="login-content">
-            <div class="login-logo">
-                <h1>
-                    <span class="text-dark">Skin</span> <span class="text-rose">Scam</span>
-                </h1>
-                <p style="font-size:13px;color:var(--gray-500);margin-top:4px;">Inicia sesión en tu cuenta</p>
-            </div>
+        <div class="screen-scroll">
+            <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:48px 24px 32px;min-height:100%;box-sizing:border-box;">
 
-            <div class="login-form">
-                <div class="login-field">
-                    <label>Correo electrónico</label>
-                    <input type="email" class="login-input" placeholder="sofia@email.com" readonly>
+                <!-- Logo -->
+                <div style="text-align:center;margin-bottom:36px;">
+                    <h1 style="font-family:var(--font-heading);font-size:30px;font-weight:700;margin:0;">
+                        <span class="text-dark">Skin</span> <span class="text-rose">Scam</span>
+                    </h1>
+                    <p style="font-size:13px;color:var(--gray-500);margin:6px 0 0;">Inicia sesión en tu cuenta</p>
                 </div>
-                <div class="login-field">
-                    <label>Contraseña</label>
-                    <input type="password" class="login-input" placeholder="••••••••" value="password" readonly>
+
+                <!-- Form -->
+                <div style="width:100%;display:flex;flex-direction:column;gap:16px;">
+
+                    <div style="display:flex;flex-direction:column;gap:6px;">
+                        <label style="display:block;font-size:13px;font-weight:600;color:var(--gray-700);">Correo electrónico</label>
+                        <input type="email" value="sofia@email.com" readonly
+                            style="display:block;width:100%;padding:12px 16px;border:1.5px solid var(--gray-200);border-radius:12px;font-size:15px;font-family:var(--font-body);background:white;color:var(--gray-900);outline:none;box-sizing:border-box;">
+                    </div>
+
+                    <div style="display:flex;flex-direction:column;gap:6px;">
+                        <label style="display:block;font-size:13px;font-weight:600;color:var(--gray-700);">Contraseña</label>
+                        <input type="password" value="password" readonly
+                            style="display:block;width:100%;padding:12px 16px;border:1.5px solid var(--gray-200);border-radius:12px;font-size:15px;font-family:var(--font-body);background:white;color:var(--gray-900);outline:none;box-sizing:border-box;">
+                    </div>
+
+                    <button style="background:none;border:none;text-align:right;font-size:13px;color:var(--rose-cta);font-weight:500;cursor:pointer;padding:0;font-family:var(--font-body);">¿Olvidaste tu contraseña?</button>
+
+                    <button class="btn-primary-pill" onclick="navigateTo('screen-home')" style="margin-top:4px;">
+                        Iniciar Sesión
+                    </button>
                 </div>
-                <button class="login-forgot">¿Olvidaste tu contraseña?</button>
-                <button class="btn-primary-pill login-btn" onclick="navigateTo('screen-home')">Iniciar Sesión</button>
+
+                <!-- Divider -->
+                <div style="display:flex;align-items:center;gap:12px;width:100%;margin:20px 0;color:var(--gray-400);font-size:13px;">
+                    <div style="flex:1;height:1px;background:var(--gray-200);"></div>
+                    o continúa con
+                    <div style="flex:1;height:1px;background:var(--gray-200);"></div>
+                </div>
+
+                <!-- Social buttons -->
+                <div style="display:flex;gap:12px;width:100%;">
+                    <button style="flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:12px;border:1.5px solid var(--gray-200);border-radius:12px;background:white;font-size:14px;font-weight:500;font-family:var(--font-body);cursor:pointer;color:var(--gray-700);">
+                        <i class="bi bi-google" style="font-size:18px;"></i> Google
+                    </button>
+                    <button style="flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:12px;border:1.5px solid var(--gray-200);border-radius:12px;background:white;font-size:14px;font-weight:500;font-family:var(--font-body);cursor:pointer;color:var(--gray-700);">
+                        <i class="bi bi-apple" style="font-size:18px;"></i> Apple
+                    </button>
+                </div>
+
+                <!-- Footer -->
+                <p style="margin-top:28px;font-size:13px;color:var(--gray-500);text-align:center;">
+                    ¿No tienes cuenta?
+                    <button onclick="navigateTo('screen-quiz')" style="color:var(--rose-cta);font-weight:600;background:none;border:none;cursor:pointer;font-size:13px;font-family:var(--font-body);">Crear cuenta</button>
+                </p>
+
             </div>
-
-            <div class="login-divider">o continúa con</div>
-
-            <div class="social-buttons">
-                <button class="social-btn">
-                    <i class="bi bi-google"></i>
-                    Google
-                </button>
-                <button class="social-btn">
-                    <i class="bi bi-apple"></i>
-                    Apple
-                </button>
-            </div>
-
-            <p class="login-footer">
-                ¿No tienes cuenta? <button onclick="navigateTo('screen-quiz')">Crear cuenta</button>
-            </p>
         </div>
     </div>
+
 
     <!-- ============================================ -->
     <!-- PANTALLA: HOME                               -->
