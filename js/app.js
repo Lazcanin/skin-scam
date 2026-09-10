@@ -52,13 +52,6 @@ document.addEventListener('DOMContentLoaded', function() {
     var observer = new MutationObserver(function(mutations) {
         mutations.forEach(function(m) {
             if (m.target.id === 'screen-scanner' && m.target.classList.contains('active')) {
-                var sheet = m.target.querySelector('.scanner-sheet');
-                if (sheet) {
-                    sheet.style.transform = 'translateY(100%)';
-                    setTimeout(function() {
-                        sheet.style.transform = 'translateY(0)';
-                    }, 400);
-                }
                 // Activar línea de escaneo
                 var line = m.target.querySelector('.scanning-line');
                 if (line) {
